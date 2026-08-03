@@ -1,0 +1,71 @@
+<div class="voice-call-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Voice Call & Screen Share</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+
+            <div class="flex-container flexFlowColumn">
+                <label class="checkbox_label">
+                    <input id="vc_auto_listen" type="checkbox" />
+                    <span>Auto-resume listening after the bot finishes speaking (call mode)</span>
+                </label>
+
+                <label class="checkbox_label">
+                    <input id="vc_mute_while_speaking" type="checkbox" />
+                    <span>Mute microphone while TTS is playing (prevents the bot hearing itself)</span>
+                </label>
+
+                <label class="checkbox_label">
+                    <input id="vc_push_to_talk" type="checkbox" />
+                    <span>Push-to-talk mode (hold the mic button instead of continuous listening)</span>
+                </label>
+
+                <label for="vc_language">Speech recognition language</label>
+                <input id="vc_language" type="text" class="text_pole" placeholder="en-US" />
+
+                <label for="vc_silence_timeout">
+                    Silence before auto-send (ms): <span id="vc_silence_timeout_value">1200</span>
+                </label>
+                <input id="vc_silence_timeout" type="range" min="400" max="3000" step="100" />
+
+                <label for="vc_resume_delay">
+                    Delay before mic resumes after bot stops speaking (ms): <span id="vc_resume_delay_value">400</span>
+                </label>
+                <input id="vc_resume_delay" type="range" min="0" max="2000" step="100" />
+
+                <hr>
+
+                <label class="checkbox_label">
+                    <input id="vc_screenshare_enabled" type="checkbox" />
+                    <span>Attach a screen-share frame to each message you send while sharing is active</span>
+                </label>
+
+                <label for="vc_screenshare_quality">
+                    Screenshot JPEG quality: <span id="vc_screenshare_quality_value">0.7</span>
+                </label>
+                <input id="vc_screenshare_quality" type="range" min="0.2" max="1" step="0.1" />
+
+                <div class="flex-container">
+                    <small>
+                        Requires a vision-capable model and "Send inline images" enabled in your
+                        Chat Completion settings. For more robust screen-share handling you can also use/pair with
+                        the official <a href="https://github.com/SillyTavern/Extension-ScreenShare" target="_blank">Extension-ScreenShare</a>.
+                    </small>
+                </div>
+
+                <hr>
+
+                <div class="flex-container">
+                    <input id="vc_start_call" class="menu_button" type="button" value="Start Call" />
+                    <input id="vc_stop_call" class="menu_button" type="button" value="Stop Call" />
+                    <input id="vc_toggle_screenshare" class="menu_button" type="button" value="Toggle Screen Share" />
+                </div>
+                <div class="flex-container">
+                    <small id="vc_status_text">Status: idle</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
